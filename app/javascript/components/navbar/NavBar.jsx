@@ -62,8 +62,12 @@ export default function NavBar() {
         <li>
           <Link to="/newlistings">New Listings </Link>
         </li>
-        <li>About Us</li>
-        <li>Blog</li>
+        <li>
+          <Link to="/about">About Us</Link>
+        </li>
+        <li>
+          <Link to="/blog">Blog</Link>
+        </li>
       </MenuItems>
     </NavBarStyle>
   );

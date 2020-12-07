@@ -2,15 +2,15 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-const AboutDiv = styled.div`
+const BlogDiv = styled.div`
   padding-top: 4rem;
   margin-top: 4rem;
 `;
 
-export default function About() {
+export default function Blog() {
   return (
-    <AboutDiv>
-      <h1>About Page</h1>
-    </AboutDiv>
+    <BlogDiv>
+      <h1>Blog Page</h1>
+    </BlogDiv>
   );
 }
