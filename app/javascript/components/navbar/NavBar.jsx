@@ -57,7 +57,7 @@ export default function NavBar() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/">Marketplace</Link>
+          <Link to="/marketplace">Marketplace</Link>
         </li>
         <li>
           <Link to="/newlistings">New Listings </Link>

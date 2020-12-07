@@ -9,6 +9,8 @@ import Home from './Home';
 import About from './About';
 import Contact from './Contact';
 
+import { ListingsHome } from './marketplace/Listings.jsx';
+
 import NavBar from './navbar/NavBar.jsx';
 
 const AppDiv = styled.div`
@@ -18,14 +20,15 @@ const AppDiv = styled.div`
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <AppDiv>
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/marketplace" component={ListingsHome} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
         </Switch>
-      </div>
+      </AppDiv>
     );
   }
 }
