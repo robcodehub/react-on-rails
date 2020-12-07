@@ -7,6 +7,8 @@ import ReactDOM from 'react-dom';
 import GlobalStyle from '../styles/GlobalStyle.js';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+import { ListingsContextProvider } from '../context/ListingsContext.jsx';
+
 import App from '../components/App';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <>
       <GlobalStyle />
       <Router>
-        <Route path="/" component={App} />
+        <ListingsContextProvider>
+          <Route path="/" component={App} />
+        </ListingsContextProvider>
       </Router>
     </>,
     document.body.appendChild(document.createElement('div'))

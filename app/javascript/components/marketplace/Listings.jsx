@@ -10,8 +10,8 @@ export const Grid = styled.div`
 `;
 
 const LoadingDiv = styled.div`
-  margin-top: 3rem;
-  padding-top: 3rem;
+  margin-top: 4rem;
+  padding-top: 4rem;
 `;
 
 export const ListingsHome = () => {
@@ -24,10 +24,14 @@ export const ListingsHome = () => {
       allListings === undefined ||
       allListings[0].listing_status === 'loading'
     )
-      axios.get('/api/allsalelistings').then((response) => {
-        setAllListings([...response.data.data.listings]);
-        setLoading(false);
-      });
+      axios
+        .get(
+          'https://cors-anywhere.herokuapp.com/https://api.empireflippers.com/api/v1/listings/list?page=1&limit=90&listing_status=For%20Sale'
+        )
+        .then((response) => {
+          setAllListings([...response.data.data.listings]);
+          setLoading(false);
+        });
 
     if (allListings[0].listing_status !== 'loading') {
       setLoading(false);
@@ -41,7 +45,10 @@ export const ListingsHome = () => {
     </div>
   ) : (
     <LoadingDiv>
-      <h1>Loading Listings...</h1>
+      <div></div>
+      <div>
+        <h1>Loading Listings...</h1>
+      </div>
     </LoadingDiv>
   );
 };
