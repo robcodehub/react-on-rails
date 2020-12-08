@@ -1,24 +1,35 @@
-# README
+# Getting Started with EF Marketplace React On Rails Test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The React section of this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Things you may want to cover:
+The backend was build on Ruby on Rails.
 
-* Ruby version
+## Available Scripts
 
-* System dependencies
+To the run the project, follow the below steps:
 
-* Configuration
+### 1) Install dependencies
 
-* Database creation
+`npm install` or `npm i` or `yarn install`
 
-* Database initialization
+### 2) Start the server
 
-* How to run the test suite
+`rails s` will start the rails server
 
-* Services (job queues, cache servers, search engines, etc.)
+### 4) View the app in development mode
 
-* Deployment instructions
+The app should now be running in development mode
 
-* ...
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits. You will also see any lint errors in the console.
+
+### 5) RSpec Tests
+
+To run RSpec tests, open a new terminal and run the below command:
+`rspec` followed by the test file name
+
+For example:
+`rspec user_spec.rb`
+
+Tests for the project can be found in the `spec/lib` and `spec/models` folders
