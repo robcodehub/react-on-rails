@@ -7,9 +7,7 @@ import styled from 'styled-components';
 
 import Home from './Home';
 import About from './About';
-import Contact from './Contact';
-
-// import { NewListingsContext } from '../context/ListingsContext.jsx';
+import Blog from './Blog';
 
 import { ListingsHome } from './marketplace/Listings.jsx';
 import { NewListings } from './newlistings/NewListings.jsx';
@@ -22,24 +20,6 @@ const AppDiv = styled.div`
 `;
 
 function App() {
-  // const [allNewListings, setAllNewListings] = useContext(NewListingsContext);
-
-  // useEffect(() => {
-  //   if (
-  //     allNewListings === undefined ||
-  //     allNewListings[0] === undefined ||
-  //     allNewListings[0].listing_status === 'loading'
-  //   ) {
-  //     axios
-  //       .get(
-  //         'https://cors-anywhere.herokuapp.com/https://api.empireflippers.com/api/v1/listings/list?new_listing=true'
-  //       )
-  //       .then((response) => {
-  //         setAllNewListings([...response.data.data.listings]);
-  //       });
-  //   }
-  // }, [allNewListings, setAllNewListings]);
-
   return (
     <AppDiv>
       <NavBar />
@@ -50,7 +30,7 @@ function App() {
         <Route exact path="/marketplace" component={ListingsHome} />
         <Route exact path="/marketplace" component={ListingsHome} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/blog" component={Blog} />
       </Switch>
     </AppDiv>
   );

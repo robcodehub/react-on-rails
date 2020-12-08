@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 class Client
   attr_accessor :name, :savedlistings
 
@@ -18,6 +16,5 @@ describe Client do
   it 'client has no saved listings' do
     client = Client.new
       expect(client.savedlistings).to eq(0)
-    end
-
+  end
 end

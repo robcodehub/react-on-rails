@@ -1,12 +1,13 @@
-require 'rails_helper'
 
 class User
   attr_accessor :first_name
   attr_accessor :last_name
   attr_accessor :email
 
-  def initialize
-    @first_name = 'FirstName'
+  def initialize(first_name, last_name, email)
+    @first_name = niche_type
+    @last_name = last_name
+    @email = email
   end
 end
 
