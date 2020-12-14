@@ -27,7 +27,6 @@ gem 'jbuilder', '~> 2.7'
 
 
 # http requests
-gem 'faraday'
 gem 'httparty'
 
 # Reduces boot times through caching; required in config/boot.rb

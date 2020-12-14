@@ -3,16 +3,10 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   get '/apinewlistings', controller: 'newlistings', action: 'newlistings'
-  get '/apiallsalelistings', controller: 'newlistings', action: 'allsalelistings'
-  get '/apialllistings', controller: 'newlistings', action: 'alllistings'
-  get '/apilisting/:listingid', controller: 'newlistings', action: 'listingbyid'
-  get '/sortlistings/:sorttype/:sortorder', controller: 'newlistings', action: 'sortlistings'
-
-  #namespace :api, defaults: {format: :json} do
-  #  namespace :v1 do
-  #    resources :listings, only: [:newlistings, :alllistings, :allsalelistings]
-  #  end
-  # end
+  get '/apiallsalelistings', controller: 'listings', action: 'allsalelistings'
+  get '/apialllistings', controller: 'listings', action: 'alllistings'
+  get '/apilisting/:listingid', controller: 'listings', action: 'listingbyid'
+  get '/sortlistings/:sorttype/:sortorder', controller: 'listings', action: 'sortlistings'
 
 
   match '*path', to: 'pages#index', via: :all
