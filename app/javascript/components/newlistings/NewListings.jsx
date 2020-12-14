@@ -18,13 +18,9 @@ export const NewListings = () => {
       allNewListings[0] === undefined ||
       allNewListings[0].listing_status === 'loading'
     ) {
-      axios
-        .get(
-          'https://cors-anywhere.herokuapp.com/https://api.empireflippers.com/api/v1/listings/list?new_listing=true'
-        )
-        .then((response) => {
-          setAllNewListings([...response.data.data.listings]);
-        });
+      axios.get('/apinewlistings').then((response) => {
+        setAllNewListings([...response.data.data.listings]);
+      });
     }
   }, [allNewListings, setAllNewListings]);
 
