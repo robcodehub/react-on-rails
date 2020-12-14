@@ -15,7 +15,6 @@ export const NewListings = () => {
   useEffect(() => {
     if (
       allNewListings === undefined ||
-      allNewListings[0] === undefined ||
       allNewListings[0].listing_status === 'loading'
     ) {
       axios.get('/apinewlistings').then((response) => {
@@ -24,9 +23,8 @@ export const NewListings = () => {
     }
   }, [allNewListings, setAllNewListings]);
 
-  return allNewListings === undefined ||
-    allNewListings[0] === undefined ||
-    allNewListings[0].listing_status === 'loading' ? (
+  return allNewListings[0].listing_status === 'loading' ||
+    allNewListings === undefined ? (
     <div key="loading-newlistings">
       <div>
         <h1>....</h1>

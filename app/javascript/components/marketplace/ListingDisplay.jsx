@@ -19,12 +19,16 @@ const ListingDisplay = ({ listings }) => (
   <>
     <Grid id="all-listings">
       <ListingsHeader />
-      {listings[0].listing_status !== 'loading' && listings.length > 2 ? (
+      {listings[0].listing_status !== 'loading' && listings.length > 1 ? (
         listings.map((listing, index) => {
           return (
             <BusinessRow
               key={listing.id}
-              color={listing.listing_status.toLowerCase() === 'sold' ? '#848a93' : '#000'}
+              color={
+                listing.listing_status.toLowerCase() === 'sold'
+                  ? '#848a93'
+                  : '#000'
+              }
               backgroundcolor={index % 2 === 0 ? '#fff' : '#e8e8e8'}
             >
               <BusinessListingRow listing={listing} key={listing.id} />
