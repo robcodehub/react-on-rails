@@ -61,9 +61,7 @@ const BusinessHeadings = ({ setSortingInProgress }) => {
       setSortingInProgress(false);
     } else {
       axios
-        .get(
-          `https://cors-anywhere.herokuapp.com/https://api.empireflippers.com/api/v1/listings/list?sort=${orderByType}&order=${ascOrDesc}&page=1&limit=90&listing_status=For%20Sale`
-        )
+        .get(`/sortlistings/${orderByType}/${ascOrDesc}`)
         .then((response) => {
           setAllListings([...response.data.data.listings]);
 

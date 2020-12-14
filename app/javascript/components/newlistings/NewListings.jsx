@@ -15,22 +15,16 @@ export const NewListings = () => {
   useEffect(() => {
     if (
       allNewListings === undefined ||
-      allNewListings[0] === undefined ||
       allNewListings[0].listing_status === 'loading'
     ) {
-      axios
-        .get(
-          'https://cors-anywhere.herokuapp.com/https://api.empireflippers.com/api/v1/listings/list?new_listing=true'
-        )
-        .then((response) => {
-          setAllNewListings([...response.data.data.listings]);
-        });
+      axios.get('/apinewlistings').then((response) => {
+        setAllNewListings([...response.data.data.listings]);
+      });
     }
   }, [allNewListings, setAllNewListings]);
 
-  return allNewListings === undefined ||
-    allNewListings[0] === undefined ||
-    allNewListings[0].listing_status === 'loading' ? (
+  return allNewListings[0].listing_status === 'loading' ||
+    allNewListings === undefined ? (
     <div key="loading-newlistings">
       <div>
         <h1>....</h1>

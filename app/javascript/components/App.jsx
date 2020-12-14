@@ -1,8 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-// Axios and Styled Components
-import axios from 'axios';
+// Styled Components
 import styled from 'styled-components';
 
 import Home from './Home';
